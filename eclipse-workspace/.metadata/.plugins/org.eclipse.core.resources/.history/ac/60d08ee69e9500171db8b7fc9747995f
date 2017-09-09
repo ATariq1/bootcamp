@@ -1,0 +1,20 @@
+
+public class Circle implements shape {
+
+	private double x, y, r;
+
+	public Circle(double x, double y, double r) {
+		
+		this.x = x;
+		this.y = y;
+		this.r = r;
+	}
+
+	}
+
+	public double area() {
+	
+	return 3.14*r*r;
+}
+	
+}

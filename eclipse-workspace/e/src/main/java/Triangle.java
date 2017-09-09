@@ -1,5 +1,6 @@
+import java.util.ArrayList;
 
-public class Triangle {
+public class Triangle implements shape {
 
 	private double x1, x2, x3, y1, y2, y3;
 
@@ -24,9 +25,25 @@ public class Triangle {
 	}
 
 	public static void main(String[] args) {
+		Triangle t = new Triangle(1.0, 10.0, 200.0, 50.0, 700.0, 300.0);
+		ArrayList<shape> shapeList = new ArrayList<shape>();
 
-		Triangle t = new Triangle(1.0, 10.0, 200.0, 5000.0, 30000.0, 300000.0);
-		System.out.println("Triangle area issss " + t.area());
+		shapeList.add(t);
+		t = new Triangle(1.0,12.0,3.0,4.0,6.0,7.0);
+		Circle c = new Circle(1,2,6);
+		Rectangle r = new Rectangle(3,1,4,6);
+		shapeList.add(r);
+		shapeList.add(c);
+		shapeList.add(t);
+		//double totalArea = 0; 
+		
+		for(shape x  :shapeList) {
+			
+			System.out.println("The " + x.getClass().getSimpleName() + " has area " + x.area());
+		}
+
+		//System.out.println("total Triangle area is " + totalArea);
+		//System.out.println(shapeList.get(0).area());
 	}
 
 }
